@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ravi Virtual Academy - Student Portal</title>
+    <link rel="stylesheet" href="user.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <img src="logo.png" alt="Ravi Virtual Academy Logo" id="logo">
+            <h1>Ravi Virtual Academy</h1>
+            <div class="header-controls">
+                <select id="language-switcher">
+                    <option value="en">English</option>
+                    <option value="ur">Urdu</option>
+                </select>
+                <button id="theme-switcher">Toggle Theme</button>
+            </div>
+        </header>
+        <main>
+            <div id="auth-container">
+                <h2>Student Login</h2>
+                <form id="login-form">
+                    <input type="email" id="login-email" placeholder="Email" required>
+                    <input type="password" id="login-password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don't have an account? <a href="#" id="show-enrollment">Enroll Now</a></p>
+            </div>
+            <div id="enrollment-container" class="hidden">
+                <h2>Enrollment Form</h2>
+                <form id="enrollment-form">
+                    <input type="text" id="enroll-name" placeholder="Full Name" required>
+                    <input type="text" id="enroll-fname" placeholder="Father's Name" required>
+                    <input type="email" id="enroll-email" placeholder="Email" required>
+                    <input type="password" id="enroll-password" placeholder="Create Password" required>
+                    <textarea id="enroll-address" placeholder="Address" required></textarea>
+                    <fieldset>
+                        <legend>Subjects</legend>
+                        <label><input type="checkbox" name="subject" value="9th"> 9th</label>
+                        <label><input type="checkbox" name="subject" value="10th"> 10th</label>
+                        <label><input type="checkbox" name="subject" value="1st Year"> 1st Year</label>
+                        <label><input type="checkbox" name="subject" value="2nd Year"> 2nd Year</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Medium</legend>
+                        <label><input type="radio" name="medium" value="English" checked> English</label>
+                        <label><input type="radio" name="medium" value="Urdu"> Urdu</label>
+                    </fieldset>
+                    <button type="submit">Submit Enrollment Request</button>
+                </form>
+                <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+            </div>
+
+            <div id="dashboard-container" class="hidden">
+                <div class="dashboard-header">
+                    <h2>Welcome, <span id="student-name"></span>!</h2>
+                    <button id="logout-btn">Logout</button>
+                </div>
+                <div id="approval-status" class="hidden">
+                    <p>Your enrollment request is pending for approval. Please check back later.</p>
+                </div>
+                <div id="demo-status" class="hidden">
+                    <h3>Your 3-Day Demo Schedule</h3>
+                    <div id="demo-schedule"></div>
+                </div>
+                <div id="main-dashboard" class="hidden">
+                    <div class="dashboard-grid">
+                        <div class="dashboard-widget">
+                            <h3>Timetable</h3>
+                            <div id="timetable"></div>
+                        </div>
+                        <div class="dashboard-widget">
+                            <h3>Fee Status</h3>
+                            <div id="fee-status"></div>
+                        </div>
+                        <div class="dashboard-widget">
+                            <h3>Announcements</h3>
+                            <div id="announcements"></div>
+                        </div>
+                        <div class="dashboard-widget">
+                            <h3>Profile</h3>
+                            <div id="student-profile"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>© 2025 Ravi Virtual Academy. All Rights Reserved.</p>
+            <a href="#" id="feedback-link">Provide Feedback</a>
+        </footer>
+
+        <div id="feedback-modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-btn">×</span>
+                <h3>Feedback</h3>
+                <form id="feedback-form">
+                    <textarea id="feedback-text" placeholder="Your feedback..." required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="user.js"></script>
+</body>
+</html>
